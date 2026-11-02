@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ASRA’ni o‘rnating</title>
+<meta name="description" content="ASRA ilovasini bola telefoniga o‘rnating va ota-onangizdagi ulanish kodini kiriting.">
+<link rel="canonical" href="https://asrafamily.uz/k">
+<meta name="theme-color" content="#5B5BD6">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="apple-touch-icon" href="assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="install-page">
+
+<a class="skip-link" href="#main">Asosiy qismga o‘tish</a>
+
+<header class="site-header">
+  <div class="container">
+    <a class="wordmark" href="/" aria-label="ASRA bosh sahifasi">
+      <img src="assets/favicon.svg" width="30" height="30" alt="">
+      ASRA
+    </a>
+  </div>
+</header>
+
+<main id="main" class="install-main">
+  <div class="container">
+    <section class="install-card" aria-labelledby="install-title">
+      <img class="install-logo" src="assets/favicon.svg" width="76" height="76" alt="ASRA ilovasi belgisi">
+      <h1 id="install-title">ASRA’ni o‘rnating</h1>
+      <p class="install-lead">Bola telefonida ASRA ilovasini Google Play orqali yuklab oling.</p>
+
+      <div id="pairing-code-panel" class="pairing-code-panel" hidden>
+        <span class="pairing-code-label">Ulanish kodi</span>
+        <output id="pairing-code" class="pairing-code"></output>
+      </div>
+
+      <!-- TODO(prod-release): Google Play listing ommaga ochilganini relizdan oldin tekshirish. -->
+      <a class="install-button" href="https://play.google.com/store/apps/details?id=uz.asra.asra_parent">Google Play orqali o‘rnatish</a>
+
+      <p class="install-instructions">O‘rnatgach ilovani oching, “Bola”ni tanlang va ota-onangizdagi 6 xonali kodni kiriting.</p>
+    </section>
+  </div>
+</main>
+
+<script>
+  const code = new URLSearchParams(window.location.search).get('c');
+  if (/^\d{6}$/.test(code || '')) {
+    document.getElementById('pairing-code').textContent = code;
+    document.getElementById('pairing-code-panel').hidden = false;
+  }
+</script>
+
+</body>
+</html>

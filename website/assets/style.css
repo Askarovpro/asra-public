@@ -1,0 +1,667 @@
+/* ASRA — asrafamily.uz
+   Ranglar app/packages/asra_core/lib/src/tokens/asra_colors.dart dan olingan. */
+
+:root {
+  --bg-canvas: #ececf4;
+  --bg-card: #ffffff;
+  --bg-subtle: #fafafd;
+  --brand: #5b5bd6;
+  --brand-strong: #4b4acc;
+  --brand-subtle: #eeeefb;
+  --brand-border-soft: #c9c9f0;
+  --text-primary: #1d1d33;
+  --text-secondary: #3b3b54;
+  --text-muted: #6e6e85;
+  --text-inverse: #ffffff;
+  --border-strong: #d8d8e6;
+  --hairline: #f0f0f6;
+  --danger: #e5484d;
+  --success-text: #1d7a46;
+  --accent: #f5a623;
+
+  --shadow-card: 0 2px 10px rgba(29, 29, 51, 0.05);
+  --shadow-elevated: 0 8px 24px -4px rgba(29, 29, 51, 0.06),
+    0 2px 8px rgba(29, 29, 51, 0.04);
+
+  --radius-card: 22px;
+  --radius-lg: 16px;
+  --radius-sm: 12px;
+  --container: 1120px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg-canvas);
+  color: var(--text-primary);
+  font-family: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI",
+    sans-serif;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--brand-strong);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--brand);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  font-weight: 800;
+}
+
+p {
+  margin: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--bg-card);
+  color: var(--text-primary);
+  padding: 12px 18px;
+  border-radius: var(--radius-sm);
+  z-index: 10;
+}
+
+.skip-link:focus {
+  left: 16px;
+  top: 16px;
+}
+
+/* ---------- Header ---------- */
+
+.site-header {
+  padding: 20px 0;
+}
+
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.wordmark {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  color: var(--text-primary);
+  font-weight: 800;
+  font-size: 21px;
+  letter-spacing: 0.04em;
+}
+
+.wordmark:hover {
+  text-decoration: none;
+}
+
+.wordmark svg {
+  display: block;
+  width: 26px;
+  height: 30px;
+  color: var(--brand);
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.header-nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 14px;
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.header-nav a:hover {
+  background: var(--bg-card);
+  color: var(--brand-strong);
+  text-decoration: none;
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+  padding: 24px 0 clamp(48px, 7vw, 88px);
+}
+
+.hero-grid {
+  display: grid;
+  gap: clamp(32px, 5vw, 56px);
+  align-items: center;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px 8px 12px;
+  border-radius: 999px;
+  background: var(--bg-card);
+  border: 1px solid var(--brand-border-soft);
+  color: var(--brand-strong);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.chip-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--brand);
+}
+
+.hero h1 {
+  margin: 20px 0 0;
+  font-size: clamp(32px, 5.2vw, 56px);
+}
+
+.hero-sub {
+  margin-top: 18px;
+  max-width: 34ch;
+  font-size: clamp(17px, 1.6vw, 19px);
+  color: var(--text-secondary);
+}
+
+/* Kanvas (#ECECF4) ustidagi matnda --text-muted 4.22:1 beradi (AA fail),
+   shuning uchun kanvasda --text-secondary, oq kartalarda --text-muted. */
+.hero-note {
+  margin-top: 24px;
+  font-size: 15px;
+  color: var(--text-secondary);
+}
+
+.hero-art {
+  position: relative;
+  border-radius: 32px;
+  padding: clamp(28px, 4vw, 48px);
+  background: linear-gradient(140deg, #5250c8 0%, #322f86 100%);
+  box-shadow: 0 18px 44px -18px rgba(50, 47, 134, 0.55);
+}
+
+.hero-art::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 32px;
+  background: radial-gradient(
+    120% 90% at 20% 0%,
+    rgba(255, 255, 255, 0.18) 0%,
+    rgba(255, 255, 255, 0) 60%
+  );
+  pointer-events: none;
+}
+
+.hero-art img {
+  position: relative;
+  z-index: 1;
+  margin: 0 auto;
+  width: min(100%, 420px);
+}
+
+/* ---------- Sections ---------- */
+
+.section {
+  padding: clamp(48px, 7vw, 88px) 0;
+}
+
+.section-head {
+  max-width: 60ch;
+  margin-bottom: clamp(28px, 4vw, 44px);
+}
+
+.section-head h2 {
+  font-size: clamp(26px, 3.4vw, 38px);
+}
+
+.section-head p {
+  margin-top: 14px;
+  color: var(--text-secondary);
+}
+
+/* ---------- Imkoniyatlar ---------- */
+
+.feature-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.card {
+  background: var(--bg-card);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  padding: 28px 26px;
+}
+
+.card h3 {
+  margin-top: 20px;
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.card p {
+  margin-top: 10px;
+  font-size: 16px;
+  color: var(--text-muted);
+}
+
+.icon-tile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: var(--brand-subtle);
+  color: var(--brand-strong);
+}
+
+.icon-tile svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* ---------- Qanday ishlaydi ---------- */
+
+.steps-grid {
+  display: grid;
+  gap: clamp(32px, 5vw, 56px);
+  align-items: center;
+}
+
+.steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 16px;
+}
+
+.steps li {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  background: var(--bg-card);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  padding: 22px 24px;
+}
+
+.step-num {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--brand);
+  color: var(--text-inverse);
+  font-weight: 800;
+  font-size: 17px;
+}
+
+.step-body h3 {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.step-body p {
+  margin-top: 6px;
+  font-size: 16px;
+  color: var(--text-muted);
+}
+
+.steps-art {
+  display: flex;
+  justify-content: center;
+}
+
+.steps-art img {
+  width: min(100%, 400px);
+}
+
+/* ---------- Maxfiylik bloki ---------- */
+
+.privacy-panel {
+  background: var(--bg-card);
+  border-radius: 28px;
+  box-shadow: var(--shadow-elevated);
+  padding: clamp(28px, 4vw, 48px);
+  display: grid;
+  gap: clamp(28px, 4vw, 48px);
+  align-items: center;
+}
+
+.privacy-panel h2 {
+  font-size: clamp(24px, 3vw, 34px);
+}
+
+.promise-list {
+  list-style: none;
+  margin: 24px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 14px;
+}
+
+.promise-list li {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  font-size: 16px;
+  color: var(--text-secondary);
+}
+
+.promise-list svg {
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  color: var(--success-text);
+}
+
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  margin-top: 24px;
+  font-weight: 700;
+  color: var(--brand-strong);
+}
+
+.text-link svg {
+  width: 20px;
+  height: 20px;
+}
+
+.privacy-art img {
+  width: min(100%, 340px);
+  margin: 0 auto;
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  border-top: 1px solid var(--border-strong);
+  padding: 40px 0 56px;
+}
+
+.site-footer .container {
+  display: grid;
+  gap: 20px;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 20px;
+}
+
+.footer-links a,
+.footer-links span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.footer-links a:hover {
+  color: var(--brand-strong);
+}
+
+.copyright {
+  font-size: 15px;
+  color: var(--text-secondary);
+}
+
+/* ---------- Hujjat sahifalari (maxfiylik) ---------- */
+
+.doc {
+  padding: 8px 0 clamp(48px, 7vw, 88px);
+}
+
+.doc-inner {
+  max-width: 760px;
+  margin: 0 auto;
+  background: var(--bg-card);
+  border-radius: 28px;
+  box-shadow: var(--shadow-card);
+  padding: clamp(28px, 4vw, 56px);
+}
+
+.doc h1 {
+  font-size: clamp(28px, 4vw, 40px);
+}
+
+.doc-meta {
+  margin-top: 14px;
+  font-size: 15px;
+  color: var(--text-muted);
+}
+
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  margin-top: 8px;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.doc h2 {
+  margin-top: 40px;
+  font-size: 22px;
+}
+
+.doc h2 + p,
+.doc h2 + ul,
+.doc h2 + ol {
+  margin-top: 14px;
+}
+
+.doc p {
+  margin-top: 14px;
+  font-size: 16px;
+  color: var(--text-secondary);
+}
+
+.doc ul,
+.doc ol {
+  margin: 14px 0 0;
+  padding-left: 22px;
+  display: grid;
+  gap: 10px;
+  font-size: 16px;
+  color: var(--text-secondary);
+}
+
+.doc li::marker {
+  color: var(--brand);
+}
+
+.doc .callout {
+  margin-top: 18px;
+  background: var(--brand-subtle);
+  border-radius: var(--radius-lg);
+  padding: 20px 22px;
+}
+
+.doc .callout p {
+  margin-top: 0;
+  color: var(--text-secondary);
+}
+
+.doc .callout p + p {
+  margin-top: 12px;
+}
+
+/* ---------- Ilovani o'rnatish ---------- */
+
+.install-page {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+.install-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0 clamp(48px, 8vw, 80px);
+}
+
+.install-card {
+  width: min(100%, 520px);
+  margin: 0 auto;
+  padding: clamp(28px, 7vw, 44px);
+  text-align: center;
+  background: var(--bg-card);
+  border-radius: 28px;
+  box-shadow: var(--shadow-elevated);
+}
+
+.install-logo {
+  width: 76px;
+  height: 76px;
+  margin: 0 auto 24px;
+  border-radius: 18px;
+}
+
+.install-card h1 {
+  font-size: clamp(28px, 8vw, 40px);
+}
+
+.install-lead,
+.install-instructions {
+  color: var(--text-secondary);
+}
+
+.install-lead {
+  margin-top: 14px;
+}
+
+.pairing-code-panel {
+  margin-top: 24px;
+  padding: 16px;
+  background: var(--brand-subtle);
+  border-radius: var(--radius-lg);
+}
+
+.pairing-code-label {
+  display: block;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.pairing-code {
+  display: block;
+  margin-top: 4px;
+  color: var(--brand-strong);
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  line-height: 1.3;
+}
+
+.install-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 56px;
+  margin-top: 24px;
+  padding: 14px 24px;
+  border-radius: var(--radius-lg);
+  background: var(--brand);
+  color: var(--text-inverse);
+  font-weight: 800;
+}
+
+.install-button:hover {
+  background: var(--brand-strong);
+  color: var(--text-inverse);
+  text-decoration: none;
+}
+
+.install-instructions {
+  margin-top: 20px;
+  font-size: 15px;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 420px) {
+  .container {
+    padding: 0 20px;
+  }
+}
+
+@media (min-width: 900px) {
+  .hero-grid,
+  .steps-grid,
+  .privacy-panel {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .steps-art {
+    order: -1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
